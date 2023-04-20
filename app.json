@@ -5,6 +5,9 @@
       "bundler": "metro"
     },
     "name": "ReanimatedField",
-    "slug": "ReanimatedField"
+    "slug": "ReanimatedField",
+    "ios": {
+      "bundleIdentifier": "com.anonymous.ReanimatedField"
+    }
   }
 }

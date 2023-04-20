@@ -3,13 +3,15 @@ import React from 'react';
 import { View, Text, Image, StyleSheet, Dimensions, FlatList, SafeAreaView, Pressable } from 'react-native';
 import cities from '../data/cities';
 
+import Animated from 'react-native-reanimated';
+
 const { width } = Dimensions.get('window');
 
 const CityGrid = () => {
   const renderItem = ({ item }) => (
     <Link href={`/${item.id}`} asChild>
       <Pressable style={styles.card}>
-        <Image source={{ uri: item.image }} style={styles.image} />
+        <Animated.Image sharedTransitionTag={`image-${item.id}`} source={{ uri: item.image }} style={styles.image} />
         <Text style={styles.text}>{item.name}</Text>
       </Pressable>
     </Link>

@@ -5,6 +5,8 @@ import cities from '../data/cities';
 
 import { Ionicons } from '@expo/vector-icons';
 
+import Animated from 'react-native-reanimated';
+
 const { width } = Dimensions.get('window');
 
 const CityDetails = () => {
@@ -23,7 +25,7 @@ const CityDetails = () => {
       <Pressable style={styles.backButtonContainer} onPress={handlePressBack}>
         <Ionicons name="arrow-back" size={24} color="white" />
       </Pressable>
-      <Image source={{ uri: city.image }} style={styles.image} />
+      <Animated.Image sharedTransitionTag={`image-${city.id}`} source={{ uri: city.image }} style={styles.image} />
       <Text style={styles.name}>{city.name}</Text>
       <View style={styles.detailsContainer}>
         <Text style={styles.details}>
